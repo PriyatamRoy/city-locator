@@ -1,4 +1,4 @@
 <label>Country:</label>
-<select [(ngModel)]="selectedCountry">
+<select [(ngModel)]="selectedCountry" (ngModelChange) = "onCountrySelected()">
     <option *ngFor="let c of countryList" [ngValue]="c.id">{{c.name}}</option>
 </select>

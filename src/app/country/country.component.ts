@@ -12,6 +12,8 @@ export class CountryComponent implements OnInit {
   countries;
   selectedCountry: string;
 
+  @Output() countrySelected = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
@@ -28,6 +30,10 @@ export class CountryComponent implements OnInit {
   		this.countryList.push(new Country(this.countries[i].id, this.countries[i].name));
   	} 
 
+  }
+
+  onCountrySelected() {
+    this.countrySelected.emit(this.selectedCountry);
   }
 
 }

@@ -2,5 +2,7 @@
   <h1>Welcome to City Locator</h1>
   <hr/>
 
-  <app-country></app-country>
+  <app-country (countrySelected)="onCountrySelected($event)"></app-country>
+
+  {{selectedCountry}}
 </div>
