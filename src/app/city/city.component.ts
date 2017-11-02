@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { City } from '../model/City';
 
 @Component({
@@ -10,6 +10,8 @@ export class CityComponent implements OnInit {
 
   cityList: City[] = [];
   cities;
+
+  @Input() country: string;
 
   constructor() { }
 
