@@ -1,0 +1,4 @@
+<label>City:</label>
+<select [(ngModel)]="selectedCity">
+    <option *ngFor="let c of cityList" [ngValue]="c" >{{c.name}}</option>
+</select>
