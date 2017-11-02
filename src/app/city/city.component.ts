@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { City } from '../model/City';
 
 @Component({
@@ -12,6 +12,7 @@ export class CityComponent implements OnInit {
   cities;
 
   @Input() country: string;
+  @Output() cityChanged = new EventEmitter<City>();
 
   constructor() { }
 
@@ -35,8 +36,11 @@ export class CityComponent implements OnInit {
   	for(var i = 0 ; i < this.cities.length ; i++) {
   		this.cityList.push(new City(this.cities[i].countryId, this.cities[i].name, this.cities[i].lat, this.cities[i].lon));
   	} 
-
   	
+  }
+
+  onCitySelected(city) {
+    this.cityChanged.emit(city);
   }
 
 }

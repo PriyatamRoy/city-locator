@@ -4,6 +4,13 @@
 
   <app-country (countrySelected)="onCountrySelected($event)"></app-country>
 
-  <app-city [country] = "selectedCountry"></app-city>
+  <app-city [country] = "selectedCountry" (cityChanged) = "onCitySelected($event)"></app-city>
+  <hr/>
+
+  <agm-map [latitude]="coordinate.lat" [longitude]="coordinate.lon">
+    <agm-marker [latitude]="coordinate.lat" [longitude]="coordinate.lon"></agm-marker>
+  </agm-map>
+  
+  <h2>{{selectedCity}}</h2>
 
 </div>

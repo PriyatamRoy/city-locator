@@ -5,3 +5,6 @@ div {
 app-city {
 	margin-left: 50px;
 }
+agm-map {
+  height: 400px;
+}

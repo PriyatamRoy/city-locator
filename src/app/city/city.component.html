@@ -1,4 +1,4 @@
 <label>City:</label>
-<select [(ngModel)]="selectedCity">
+<select [(ngModel)]="selectedCity" (ngModelChange) = "onCitySelected($event)">
     <option *ngFor="let c of cityList | cityfilter:country" [ngValue]="c" >{{c.name}}</option>
 </select>
